@@ -41,15 +41,15 @@ isEven n = if mod n 2 == 0 then True else False
 num_Par :: [Int] -> [Int]
 num_Par lis = filter isEven lis
 
---char10
+--ex10
 charFound :: Char -> String -> Bool
 charFound char string = char `elem` string
 
 
---char11
+--ex11
 --takeWhile (< 0) [1,2,3]
 --resultado == []
 
---char12
+--ex12
 func_Last :: [String] -> [String]
 func_Last list = filter (\n-> 'a' == (last n) )list
