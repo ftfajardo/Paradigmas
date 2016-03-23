@@ -1,0 +1,30 @@
+--1
+elevElem :: [Int] ->[Int]
+elevElem [] = []
+elevElem lis =(head lis^2): elevElem(tail lis)
+
+--2
+concatLis :: [String]->[String]
+concatLis [] = []
+concatLis lis = ("Sr." ++ head lis): concatLis(tail lis)
+
+--3
+contaEsp :: String -> Int
+contaEsp [] = 0
+contaEsp lis =if ( head lis) == ' '  then 1+contaEsp(tail lis) else contaEsp(tail lis)
+
+--4
+contaLoca :: [Float]-> [Float]
+contaLoca [] = []
+contaLoca lis = (3*(head lis) ^2 +2/(head lis )+1) :contaLoca(tail lis)
+
+--5
+
+numNeg :: [Int]-> [Int]
+numNeg [] = []
+numNeg lis = if( head lis <0) then (head lis):numNeg(tail lis) else numNeg(tail lis)
+
+
+
+
+
