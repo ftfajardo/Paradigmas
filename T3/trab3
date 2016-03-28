@@ -24,6 +24,70 @@ numNeg :: [Int]-> [Int]
 numNeg [] = []
 numNeg lis = if( head lis <0) then (head lis):numNeg(tail lis) else numNeg(tail lis)
 
+--6
+filterVog :: String-> String
+filterVog x = filter(\z-> z/= 'a' && z/= 'e' &&  z/= 'i'  && z/= 'o' && z/='u') x 
+
+--7
+
+filterVog2 :: String ->String
+filterVog2 [] = []
+filterVog2 (x:xs)
+  |not( x `elem` "aeiou") = x: filterVog2 xs
+  |otherwise = filterVog2 xs
+
+--8 
+
+stringTraco :: String->String
+stringTraco x = map(\z -> if z /= ' ' then '-'; else z)x
+
+--9
+
+stringTraco2 :: String-> String
+stringTraco2 [] = []
+stringTraco2 (x:xs) =
+  if x /= ' '
+  then '-' : stringTraco2 xs
+  else x : stringTraco2 xs
+
+--10
+ 
+charFound :: Char -> String -> Bool
+charFound _ "" = False
+charFound y (x:xs) = if y == (x) then True else charFound y (xs)
+
+--11
+
+listSoma :: [(Float,Float)] ->[(Float,Float)]
+listSoma [] = []
+listSoma (x:xs) = (fst(x)+ 2, snd(x) +2):listSoma(xs) 
+
+
+--12
+
+prodVet :: [Float]->[Float]->[Float]
+prodVet _ [] = []
+prodVet [] _  = []
+prodVet (x:xt) (y:ys) = (x*y): prodVet xt ys
+ 
+--13
+
+prodVet2 :: [Float]->[Float]->[Float]
+prodVet2 x y = zipWith(*)x y
+
+--14
+--numeros > 0
+ 
+geraTabela :: Int -> [(Int,Int)]
+geraTabela 0 = [(0, 0)]
+geraTabela n =func 1 n 
+
+func :: Int -> Int -> [(Int, Int)]
+func x n = if(x <= n)
+   then (x, x^2) : func(x + 1) n
+   else []
+
+
 
 
 
